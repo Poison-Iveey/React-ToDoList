@@ -1,0 +1,44 @@
+name: Build and Deploy React App
+on:
+  push:
+    branches:
+      - main
+  workflow_dispatch:
+  
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    
+    steps:
+      # 1️⃣Checkout your code
+      - name: Checkout code
+      uses: actions/checkout@v4
+      
+      # 2️⃣Navigate to frontend folder
+      - name: Navigate to frontend
+      run: cd dive-react-app
+      
+      # 3️⃣Set up Node.js
+      - name: Setup Node.js
+      uses: actions/setup-node@v4
+      with:
+        node-version: '20'
+        
+      # 4️⃣Install dependencies
+      - name: Install dependencies
+      run: |
+        cd dive-react-app
+        npm install
+        
+      # 5️⃣Build project
+      - name: Build project
+      run: |
+        cd dive-react-app
+        npm run build
+        
+      # 6️⃣Upload build as artifact (optional)
+      - name: Upload production files
+      uses: actions/upload-artifact@v4
+      with:
+      name: react-build
+      path: dive-react-app/dist
