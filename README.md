@@ -9,7 +9,7 @@ This project implements a 3-tier ToDo application:
 ## Getting started (local dev)
 1. Install Docker and Docker Compose
 2. From project root:
-   Open http://localhost http://192.168.49.2:30080
+   Open http://192.168.49.2:30080
 
 ## CI/CD
 GitHub Actions will build and use Minikube’s Docker directly
