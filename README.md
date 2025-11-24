@@ -8,7 +8,7 @@ This project implements a 3-tier ToDo application:
 
 ## Getting started (local dev)
 1. Install Docker and Docker Compose
-2. From project root:
+2. From your browser:
    Open http://192.168.49.2:30080
 
 ## CI/CD
